@@ -7,3 +7,6 @@ Password varchar(30),
 Designation varchar(30),
 Avatar varchar(50),
 PRIMARY KEY (EmpId,Email));
+
+
+changes made to test
