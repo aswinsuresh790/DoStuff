@@ -26,6 +26,11 @@ export class LoginComponent implements OnInit {
       Password: ['', Validators.required],
     });
   }
+
+  forgotpassword()
+{
+    this.router.navigate(['forgotpassword']);
+}
    register() {
        this.router.navigate(['register']);
    }
