@@ -26,10 +26,10 @@ export class LoginComponent implements OnInit {
       Password: ['', Validators.required],
     });
   }
-   register()
-   {
+   register() {
        this.router.navigate(['register']);
    }
+   
   Login(form) {
     this.User = form.value;
     console.warn('Your user been submitted', this.User);
