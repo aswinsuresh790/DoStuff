@@ -9,6 +9,9 @@ if(isset($postdata) && !empty($postdata))
   // Extract the data.
   $request = json_decode($postdata);
 
+
+  echo $request;
+  
   // // Validate.
   // if ((int)$request->id < 1 || trim($request->number) == '' || (float)$request->amount < 0) {
   //   return http_response_code(400);

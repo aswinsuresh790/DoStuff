@@ -271,39 +271,52 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <!-- Page Heading -->
+                   
                     <h1 class="h3 mb-4 text-gray-800">Members</h1>
-                    <form [formGroup]="UserForm" (ngSubmit)="onSubmit(UserForm)">
 
-                        EmpId:<br>
-
-                        <input type="text" name="Empid" formControlName="EmpId"><br> First name:<br>
-
-                        <input type="text" name="Firstname" formControlName="FirstName"><br> Last name:<br>
-
-                        <input type="text" name="Lastname" formControlName="LastName"><br /> Email:
-
-                        <br />
-
-                        <input type="text" name="Email" formControlName="Email" /><br /> Designation:
-
-                        <br />
-
-                        <input type="text" name="Designation" formControlName="Designation" /><br /> Password:
-
-                        <br />
-
-                        <input type="text" name="Password" formControlName="Password" /><br />
-
-                        <input type="submit">
-
-                    </form>
+                    <div class="container">
+                        <div class="row">
+                            <div class="user-profile col-l-4" *ngFor="let user of users">
+                                <img class="avatar" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTF_erFD1SeUnxEpvFjzBCCDxLvf-wlh9ZuPMqi02qGnyyBtPWdE-3KoH3s" alt="Avatar" />
+                                <div class="username">{{ user.FirstName }} {{ user.LastName }}</div>
+                                <div class="bio">
+                                    {{ user.Designation }}
+                                </div>
+                                <div class="description">
+                                    {{ user.Email }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
-                <!-- /.container-fluid -->
+                <table border='1' width='100%' style='border-collapse: collapse;'>
+                    <tr *ngFor="let user of users">
+                        <td>{{ user.EmpId }}</td>
+                        <td>{{ user.FirstName }}</td>
+                        <td>{{ user.LastName }}</td>
+                        <td>{{ user.Email }}</td>
+                        <td>{{ user.Password }}</td>
+                        <td>{{ user.Designation }}</td>
+                        <td>{{ user.Avatar }}</td>
+                        <td><button (click)="deleteUser(user.EmpId)">Delete</button></td>
+                        <td><button (click)="updateUser(user)">Update</button></td>
+                    </tr>
+                </table>
+                <!-- End of Main Content -->
+
+                <!-- Footer -->
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>Copyright &copy; Your Website 2019</span>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End of Footer -->
 
             </div>
-            <table border='1' width='100%' style='border-collapse: collapse;'>
+    <table border='1' width='100%' style='border-collapse: collapse;'>
                 <tr *ngFor="let user of users">
                     <td>{{ user.EmpId }}</td>
                     <td>{{ user.FirstName }}</td>
@@ -327,33 +340,31 @@
                 </div>
             </footer>
             <!-- End of Footer -->
+            
 
         </div>
-        <!-- End of Content Wrapper -->
+        <!-- End of Page Wrapper -->
 
-    </div>
-    <!-- End of Page Wrapper -->
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">×</span>
               </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-primary" href="login.html">Logout</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>

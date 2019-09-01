@@ -34,7 +34,7 @@ if(isset($postdata) && !empty($postdata))
   // }
   // Create.
   // $user_sql = "INSERT INTO `user`(`Empid`,`FirstName`,`LastName`,`Email`,`Password`,`Designation`,`Avatar`) VALUES ('{$EmpId}','{$FirstName}','{$LastName}','{$Email}','{$Password}','{$Designation}','{$Avatar}')";
-  $user_sql = "INSERT INTO `user`(`FirstName`,`LastName`,`Email`,`Password`,`Designation`) VALUES ('{$FirstName}','{$LastName}','{$Email}','{$Password}','{$Designation}')";
+  $user_sql = "INSERT INTO `User`(`FirstName`,`LastName`,`Email`,`Password`,`Designation`) VALUES ('{$FirstName}','{$LastName}','{$Email}','{$Password}','{$Designation}')";
 
   echo $user_sql;
 
