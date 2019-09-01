@@ -307,11 +307,49 @@
 
                     <!-- Page Heading -->
                     <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
+                    <form [formGroup]="UserForm" (ngSubmit)="onSubmit(UserForm)">
+
+                        EmpId:<br>
+
+                        <input type="text" name="Empid" formControlName="EmpId"><br> First name:<br>
+
+                        <input type="text" name="Firstname" formControlName="FirstName"><br> Last name:<br>
+
+                        <input type="text" name="Lastname" formControlName="LastName"><br /> Email:
+
+                        <br />
+
+                        <input type="text" name="Email" formControlName="Email" /><br /> Designation:
+
+                        <br />
+
+                        <input type="text" name="Designation" formControlName="Designation" /><br /> Password:
+
+                        <br />
+
+                        <input type="text" name="Password" formControlName="Password" /><br />
+
+                        <input type="submit">
+
+                    </form>
 
                 </div>
                 <!-- /.container-fluid -->
 
             </div>
+            <table border='1' width='100%' style='border-collapse: collapse;'>
+                <tr *ngFor="let user of users">
+                    <td>{{ user.EmpId }}</td>
+                    <td>{{ user.FirstName }}</td>
+                    <td>{{ user.LastName }}</td>
+                    <td>{{ user.Email }}</td>
+                    <td>{{ user.Password }}</td>
+                    <td>{{ user.Designation }}</td>
+                    <td>{{ user.Avatar }}</td>
+                    <td><button (click)="deleteUser(user.EmpId)">Delete</button></td>
+                    <td><button (click)="updateUser(user)">Update</button></td>
+                </tr>
+            </table>
             <!-- End of Main Content -->
 
             <!-- Footer -->

@@ -11,6 +11,9 @@ import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { RegisterComponent } from './register/register.component';
 import { StopParentDirective } from './stop-parent.directive';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ChatappComponent } from './chatapp/chatapp.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +25,16 @@ import { StopParentDirective } from './stop-parent.directive';
     LoginComponent,
     LogoutComponent,
     RegisterComponent,
-    StopParentDirective
+    StopParentDirective,
+    ChatappComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
