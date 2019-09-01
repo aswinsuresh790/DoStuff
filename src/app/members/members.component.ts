@@ -3,6 +3,7 @@ import { DatabaseService } from './../database.service';
 import { User } from '../model/user';
 import { FormGroup, Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-members',
@@ -15,7 +16,7 @@ export class MembersComponent implements OnInit {
   userdata: User;
   UserForm: FormGroup;
 
-  constructor(private database: DatabaseService,private formBuilder: FormBuilder) {}
+  constructor(private router: Router,private database: DatabaseService,private formBuilder: FormBuilder) {}
 
   ngOnInit() {
     this.readUser();
@@ -53,4 +54,24 @@ export class MembersComponent implements OnInit {
     this.userdata = data;
     console.log('data stored');
   }
+
+  dashboard()
+{
+  this.router.navigate(['dashboard']);
+}
+
+profile()
+{
+    this.router.navigate(['profile']);
+}
+
+spaces()
+{
+    this.router.navigate(['spaces']);
+}
+
+members()
+{
+    this.router.navigate(['members']);
+}
 }

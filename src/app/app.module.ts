@@ -14,6 +14,7 @@ import { StopParentDirective } from './stop-parent.directive';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChatappComponent } from './chatapp/chatapp.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ChatappComponent } from './chatapp/chatapp.component';
     LogoutComponent,
     RegisterComponent,
     StopParentDirective,
-    ChatappComponent
+    ChatappComponent,
+    ForgotpasswordComponent
   ],
   imports: [
     BrowserModule,

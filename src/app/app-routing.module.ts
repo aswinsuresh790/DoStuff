@@ -7,6 +7,7 @@ import { SpacesComponent } from './spaces/spaces.component';
 import { LogoutComponent } from './logout/logout.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'logout', component: LogoutComponent },
   { path: '', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'forgotpassword', component: ForgotpasswordComponent },
 
 ];
 
